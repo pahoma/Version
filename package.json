@@ -1,0 +1,20 @@
+{
+  "name": "version",
+  "description": "version increment sugar",
+  "main": "index.js",
+  "version": "2.0.1",
+  "scripts": {
+    "preversion": "VERSION=$(node -p \"require('./package.json').version\");if [ \"$(git log -1 --pretty=format:%s)\" != \"$VERSION\" ]; then echo Version checks passed. $(git log -1 --pretty=format:%s) = $VERSION  ; else echo Error: Not new commits found. ; exit 1 ; fi",
+    "postversion": "git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pahoma/Version.git"
+  },
+  "author": "Sergii Pakhomov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pahoma/Version/issues"
+  },
+  "homepage": "https://github.com/pahoma/Version#readme"
+}
